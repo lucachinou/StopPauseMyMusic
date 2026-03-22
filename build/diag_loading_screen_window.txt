@@ -1,0 +1,131 @@
+156520: 		p	1			textureManager
+156521: c	grm	net/minecraft/class_424	net/minecraft/client/gui/screen/MessageScreen
+156522: 	f	Lgjp;	a	field_49496	textWidget
+156523: c	grn	net/minecraft/class_7534	net/minecraft/client/gui/screen/TaskScreen
+156524: 	c	A screen that is used for indicating that a task is running or has finished\nrunning (either successfully or unsuccessfully). The screen has an optional\nmulti-line description and a button which can be used to close the screen.\nThe button can have a cooldown, which disables the button for a while after\nthe screen is displayed.
+156525: 	f	I	a	field_39541	TITLE_TEXT_Y
+156526: 	f	I	b	field_39542	DESCRIPTION_TEXT_Y
+156527: 	f	I	c	field_39543	DESCRIPTION_TEXT_WIDTH
+156528: 	f	Lyh;	d	field_39745	descriptionText
+156529: 	f	Lyh;	e	field_39544	closeButtonText
+156530: 	f	Ljava/lang/Runnable;	f	field_39545	closeCallback
+156531: 		c	The callback executed when the button or the Esc key is pressed. This can\nhave a side effect, such as cancelling a task in progress.
+156532: 	f	Lgjy;	t	field_39546	description
+156533: 	f	Lgje;	u	field_39547	button
+156534: 		c	The button to close the screen (potentially with a side effect, such as cancelling a task).
+156535: 	f	I	v	field_39746	buttonCooldown
+156536: 		c	How long the button should be disabled after the screen is displayed in ticks.\nCan be disabled by setting to {@code 0}.
+156537: 	m	(Lgje;)V	a	method_44689	method_44689
+156538: 		p	1			button
+156539: 	m	(Lyh;Lyh;Ljava/lang/Runnable;)Lgrn;	a	method_44690	createRunningScreen
+156540: 		c	{@return a new screen to indicate a task is running}\n\n<p>The screen has no description or button cooldown.
+156541: 		p	2			closeCallback
+156542: 		p	0			title
+156543: 		p	1			closeButtonText
+156544: 	m	(Lyh;Lyh;Lyh;Ljava/lang/Runnable;)Lgrn;	a	method_44691	createResultScreen
+156545: 		c	{@return a new screen to indicate a task has finished running}\n\n<p>The screen has a button cooldown of 20 ticks (1 second).
+156546: 		p	3			closeCallback
+156547: 		p	1			descriptionText
+156548: 		p	2			closeButtonText
+156549: 		p	0			title
+156550: 	m	(Lyh;Lyh;Lyh;Ljava/lang/Runnable;I)V	<init>	<init>	<init>
+156551: 		p	2			descriptionText
+156552: 		p	1			title
+156553: 		p	4			closeCallback
+156554: 		p	3			closeButtonText
+156555: 		p	5			buttonCooldown
+156556: c	gro	net/minecraft/class_423	net/minecraft/client/gui/screen/SleepingChatScreen
+156557: 	f	Lgje;	f	field_41710	stopSleepingButton
+156558: 	m	(Lgje;)V	a	method_19819	method_19819
+156559: 		p	1			button
+156560: 	m	()V	o	method_38530	closeChatIfEmpty
+156561: 	m	()V	p	method_2180	stopSleeping
+156562: c	grp	net/minecraft/class_3928	net/minecraft/client/gui/screen/world/LevelLoadingScreen
+156563: 	f	Lyh;	a	field_61628	DOWNLOADING_TERRAIN_TEXT
+156564: 	f	Lyh;	b	field_61629	READY_TO_PLAY_MESSAGE
+156565: 	f	J	c	field_32246	NARRATION_DELAY
+156566: 	f	I	d	field_61630	field_61630
+156567: 	f	Lhin;	e	field_61631	chunkLoadProgress
+156568: 	f	F	f	field_61632	loadProgress
+156569: 	f	J	t	field_19101	lastNarrationTime
+156570: 	f	Lgrp$a;	u	field_61633	reason
+156571: 	f	Lilp;	v	field_61634	netherPortalSprite
+156572: 	f	Lit/unimi/dsi/fastutil/objects/Object2IntMap;	w	field_17407	STATUS_TO_COLOR
+156573: 	m	(Lgir;IIIIF)V	a	method_72799	drawLoadingBar
+156574: 		p	6			delta
+156575: 		p	5			height
+156576: 		p	4			width
+156577: 		p	3			y1
+156578: 		p	2			x1
+156579: 		p	1			context
+156580: 	m	(Lgir;IIIILaxp;)V	a	method_17538	drawChunkMap
+156581: 		p	5			map
+156582: 		p	4			chunkGap
+156583: 		p	3			chunkLength
+156584: 		p	2			centerY
+156585: 		p	1			centerX
+156586: 		p	0			context
+156587: 	m	(Lhin;Lgrp$a;)V	a	method_72800	init
+156588: 		p	2			reason
+156589: 		p	1			chunkLoadProgress
+156590: 	m	(Lit/unimi/dsi/fastutil/objects/Object2IntOpenHashMap;)V	a	method_17537	method_17537
+156591: 		p	0			map
+156592: 	m	()Lilp;	o	method_72801	getNetherPortalSprite
+156593: 	m	(Lhin;Lgrp$a;)V	<init>	<init>	<init>
+156594: 		p	2			reason
+156595: 		p	1			progressProvider
+156596: c	grp$a	net/minecraft/class_3928$class_9678	net/minecraft/client/gui/screen/world/LevelLoadingScreen$WorldEntryReason
+156597: 	f	Lgrp$a;	a	field_51487	NETHER_PORTAL
+156598: 	f	Lgrp$a;	b	field_51488	END_PORTAL
+156599: 	f	Lgrp$a;	c	field_51489	OTHER
+156600: 	f	[Lgrp$a;	d	field_51490	field_51490
+156601: 	m	()[Lgrp$a;	a	method_59839	method_59839
+156602: c	grq	net/minecraft/class_7413	net/minecraft/client/gui/screen/LoadingDisplay
+156603: 	f	[Ljava/lang/String;	a	field_38992	TEXTS
+156604: 	f	J	b	field_38993	INTERVAL
+156605: 	m	(J)Ljava/lang/String;	a	method_43449	get
+156606: 		p	0			tick
+156607: c	grr	net/minecraft/class_425	net/minecraft/client/gui/screen/SplashOverlay
+156608: 	f	Lamo;	a	field_2483	LOGO
+156609: 	f	J	b	field_32247	RELOAD_COMPLETE_FADE_DURATION
+156610: 	f	J	c	field_32248	RELOAD_START_FADE_DURATION
+156611: 	f	I	d	field_32249	MOJANG_RED
+156612: 	f	I	e	field_32250	MONOCHROME_BLACK
+156613: 	f	Ljava/util/function/IntSupplier;	f	field_25041	BRAND_ARGB
+156614: 	f	I	g	field_32251	field_32251
+156615: 	f	F	h	field_32252	LOGO_RIGHT_HALF_V
+156616: 	f	I	i	field_32253	field_32253
+156617: 	f	I	j	field_32254	field_32254
+156618: 	f	F	k	field_32255	LOGO_OVERLAP
+156619: 	f	F	l	field_32256	PROGRESS_LERP_DELTA
+156620: 	f	Lgfj;	m	field_18217	client
+156621: 	f	Lbav;	n	field_17767	reload
+156622: 	f	Ljava/util/function/Consumer;	o	field_18218	exceptionHandler
+156623: 	f	Z	p	field_18219	reloading
+156624: 	f	F	q	field_17770	progress
+156625: 	f	J	r	field_17771	reloadCompleteTime
+156626: 	f	J	s	field_18220	reloadStartTime
+156627: 	m	(II)I	a	method_35732	withAlpha
+156628: 		p	0			color
+156629: 		p	1			alpha
+156630: 	m	(Lgir;IIIIF)V	a	method_18103	renderProgressBar
+156631: 		p	3			minY
+156632: 		p	4			maxX
+156633: 		p	5			maxY
+156634: 		p	6			opacity
+156635: 		p	1			context
+156636: 		p	2			minX
+156637: 	m	(Lilr;)V	a	method_18819	init
+156638: 		p	0			textureManager
+156639: 	m	()Z	c	method_74218	isInGracePeriod
+156640: 	m	()I	d	method_35733	method_35733
+156641: 	m	(Lgfj;Lbav;Ljava/util/function/Consumer;Z)V	<init>	<init>	<init>
+156642: 		p	1			client
+156643: 		p	3			exceptionHandler
+156644: 		p	2			monitor
+156645: 		p	4			reloading
+156646: c	grr$a	net/minecraft/class_425$class_4070	net/minecraft/client/gui/screen/SplashOverlay$LogoTexture
+156647: c	grs	net/minecraft/class_422	net/minecraft/client/gui/screen/multiplayer/AddServerScreen
+156648: 	f	Lyh;	a	field_26541	ENTER_NAME_TEXT
+156649: 	f	Lyh;	b	field_26542	ENTER_IP_TEXT
+156650: 	f	Lyh;	c	field_62476	field_62476

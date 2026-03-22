@@ -1,0 +1,31 @@
+===== DownloadingTerrainScreen =====
+(no match)
+
+===== PlayerRespawnS2CPacket =====
+26550:c	afy	net/minecraft/class_2724	net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket
+
+===== onPlayerRespawn =====
+24725:	m	(Lafy;)V	a	method_11117	onPlayerRespawn
+39274:	m	(Laxg;)V	b	method_18215	onPlayerRespawned
+
+===== onGameJoin =====
+24669:	m	(Laew;)V	a	method_11120	onGameJoin
+
+===== startWorldLoading =====
+166674:	m	(Lhnh;Lhif;Lgrp$a;)V	a	method_54133	startWorldLoading
+166899:	m	(Lhnh;Lhif;Lhoh;)V	a	method_72901	startWorldLoading
+
+===== clearWorld =====
+166738:	m	()V	k	method_54134	clearWorld
+
+===== unloadWorld =====
+166737:	m	()V	j	method_47658	unloadWorld
+
+===== MusicTracker =====
+144227:	m	()Liqm;	w	method_1538	getMusicTracker
+184210:c	iqm	net/minecraft/class_1142	net/minecraft/client/sound/MusicTracker
+184238:c	iqm$1	net/minecraft/class_1142$1	net/minecraft/client/sound/MusicTracker$1
+184240:c	iqm$a	net/minecraft/class_1142$class_11504	net/minecraft/client/sound/MusicTracker$MusicFrequency
+
+===== showDownloadingTerrainScreen =====
+(no match)

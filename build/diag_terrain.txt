@@ -1,0 +1,250 @@
+===== terrain =====
+15025:c	rg	net/minecraft/class_6765	net/minecraft/world/biome/source/util/VanillaTerrainParametersCreator
+15067:		c	Creates the spline for terrain factor.\n\nHigher factor values generally result in flatter terrain,\nwhile lower values generally result in more shattered terrain.
+15074:		c	Creates the spline for terrain offset.\n\nOffset roughly correlates to surface height.
+15082:		c	Creates the spline for terrain jaggedness.\n\nThis is used for the peaks in the jagged peaks biome, for example.
+115783:	c	Applies weights to noise values if they are near structures, placing terrain under them and hollowing out the space above them.
+115822:	f	Lffz;	b	comp_683	terrainAdjustment
+115825:	m	()Lffz;	b	comp_683	terrainAdjustment
+115829:		p	2			terrainAdjustment
+122423:	f	Z	g	field_14077	hasNoTerrain
+123450:	m	()Lffz;	d	method_42701	getTerrainAdaptation
+123520:	f	Lffz;	e	comp_689	terrainAdaptation
+123527:	m	()Lffz;	d	comp_689	terrainAdaptation
+123534:		p	4			terrainAdaptation
+123539:	f	Lffz;	d	field_52233	terrainAdaptation
+123543:	m	(Lffz;)Lffo$c$a;	a	method_61010	terrainAdaptation
+123544:		p	1			terrainAdaptation
+124043:c	ffz	net/minecraft/class_5847	net/minecraft/world/gen/StructureTerrainAdaptation
+124803:	f	Lfgy$a;	a	field_16686	TERRAIN_MATCHING
+156563:	f	Lyh;	a	field_61628	DOWNLOADING_TERRAIN_TEXT
+170163:	m	()V	a	method_62166	scheduleTerrainUpdate
+170855:	f	Lfzf;	T	field_64218	terrainSampler
+171088:	m	()V	j	method_76296	refreshTerrainSampler
+171093:	m	()Z	o	method_3281	isTerrainRenderComplete
+171094:	m	()V	p	method_3292	scheduleTerrainUpdate
+171917:	f	Lcom/mojang/blaze3d/pipeline/RenderPipeline$Snippet;	aS	field_56853	TERRAIN_SNIPPET
+171960:	f	Lcom/mojang/blaze3d/pipeline/RenderPipeline;	c	field_64225	SOLID_TERRAIN
+171963:	f	Lcom/mojang/blaze3d/pipeline/RenderPipeline;	f	field_64227	CUTOUT_TERRAIN
+171966:	f	Lcom/mojang/blaze3d/pipeline/RenderPipeline;	i	field_64229	TRIPWIRE_TERRAIN
+172063:	f	Z	f	field_45621	terrainUpdateScheduled
+172064:	f	Ljava/util/concurrent/Future;	g	field_45622	terrainUpdateFuture
+172069:	m	()V	a	method_52817	scheduleTerrainUpdate
+172110:	m	(ZLger;Lftm;Lit/unimi/dsi/fastutil/longs/LongOpenHashSet;)V	a	method_52833	updateTerrain
+
+===== Downloading =====
+156563:	f	Lyh;	a	field_61628	DOWNLOADING_TERRAIN_TEXT
+157252:	f	Z	D	field_2645	downloadingStats
+157259:	f	Lyh;	t	field_26546	DOWNLOADING_STATS_TEXT
+167249:		c	Always accepts the resource pack and starts downloading it.
+
+===== download =====
+24364:	f	Lacb$a;	c	field_13015	FAILED_DOWNLOAD
+24366:	f	Lacb$a;	e	field_47704	DOWNLOADED
+41031:c	azg	net/minecraft/class_9028	net/minecraft/util/Downloader
+41040:	m	(Lazg$a;Ljava/util/Map;)Ljava/util/concurrent/CompletableFuture;	a	method_55486	downloadAsync
+41045:	m	(Lazg$a;Ljava/util/Map;)Lazg$b;	b	method_55488	download
+41051:c	azg$a	net/minecraft/class_9028$class_9029	net/minecraft/util/Downloader$Config
+41068:c	azg$b	net/minecraft/class_9028$class_9030	net/minecraft/util/Downloader$DownloadResult
+41069:	f	Ljava/util/Map;	a	comp_2143	downloaded
+41071:	m	()Ljava/util/Map;	a	comp_2143	downloaded
+41074:		p	1			downloaded
+41076:c	azg$c	net/minecraft/class_9028$class_9031	net/minecraft/util/Downloader$DownloadEntry
+41084:c	azg$d	net/minecraft/class_9028$class_9032	net/minecraft/util/Downloader$FileInfo
+41095:c	azg$e	net/minecraft/class_9028$class_9033	net/minecraft/util/Downloader$LogEntry
+48832:	m	(Ljava/nio/file/Path;Ljava/net/URL;Ljava/util/Map;Lcom/google/common/hash/HashFunction;Lcom/google/common/hash/HashCode;ILjava/net/Proxy;Lbfx$a;)Ljava/nio/file/Path;	a	method_55496	download
+48841:c	bfx$a	net/minecraft/class_3521$class_9034	net/minecraft/util/NetworkUtils$DownloadListener
+50530:	f	Lz;	m	field_47571	DOWNLOAD_WORKER_EXECUTOR
+50892:	m	()Lz;	j	method_55473	getDownloadWorkerExecutor
+50893:		c	{@return the executor for download tasks}
+140020:c	fzw	net/minecraft/class_4333	net/minecraft/client/realms/FileDownload
+140032:	m	(Lgby;Ljava/lang/String;Lgcr$a;Lfni;)V	a	method_22100	downloadWorld
+140033:		p	1			download
+140041:		p	3			download
+140042:	m	(Lgcr$a;Ljava/net/http/HttpClient;Ljava/lang/String;Ljava/io/File;)V	a	method_76236	download
+140068:c	fzw$a	net/minecraft/class_4333$class_4334	net/minecraft/client/realms/FileDownload$DownloadCountingOutputStream
+140166:	f	Ljava/lang/String;	R	field_32070	WORLD_SLOT_DOWNLOAD_ENDPOINT
+140257:	m	(JI)Lgby;	b	method_21003	download
+141278:c	gby	net/minecraft/class_4889	net/minecraft/client/realms/dto/WorldDownload
+141279:	f	Ljava/lang/String;	a	comp_5036	downloadLink
+141283:	m	()Ljava/lang/String;	a	comp_5036	downloadLink
+141289:		p	1			downloadLink
+141519:	f	Ljava/util/List;	K	field_19778	slotsThatHasBeenDownloaded
+141561:	m	(I)V	c	method_21187	downloadWorld
+141631:c	gcr	net/minecraft/class_4392	net/minecraft/client/realms/gui/screen/RealmsDownloadLatestWorldScreen
+141636:	f	Lgby;	J	field_19846	worldDownload
+141637:	f	Lyh;	K	field_19847	downloadTitle
+141641:	f	Lgcr$a;	O	field_19851	downloadStatus
+141642:	f	Lyh;	P	field_20494	downloadError
+141658:	f	Ljava/util/concurrent/locks/ReentrantLock;	b	field_19868	DOWNLOAD_LOCK
+141661:	m	()V	J	method_21278	downloadSave
+141662:	m	()V	K	method_21279	downloadCancelled
+141664:	m	(Lgir;J)V	a	method_21266	drawDownloadSpeed0
+141671:		p	1			downloadLink
+141676:	m	(Lgir;)V	f	method_21276	drawDownloadSpeed
+141678:	m	()V	o	method_21265	checkDownloadSize
+141682:		p	2			worldDownload
+141684:c	gcr$a	net/minecraft/class_4392$class_4393	net/minecraft/client/realms/gui/screen/RealmsDownloadLatestWorldScreen$DownloadStatus
+142246:	f	Lyh;	I	field_51818	DOWNLOAD_TEXT
+142254:	f	Lgje;	Q	field_19749	downloadButton
+142260:	m	()V	I	method_21166	downloadClicked
+143026:c	gef	net/minecraft/class_4436	net/minecraft/client/realms/task/DownloadTask
+143032:	f	Ljava/lang/String;	g	field_20217	downloadName
+143036:		p	4			downloadName
+143049:	m	(Lgbc;Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture;	a	method_32515	downloadResourcePack
+156563:	f	Lyh;	a	field_61628	DOWNLOADING_TERRAIN_TEXT
+157252:	f	Z	D	field_2645	downloadingStats
+157259:	f	Lyh;	t	field_26546	DOWNLOADING_STATS_TEXT
+167249:		c	Always accepts the resource pack and starts downloading it.
+181408:c	ilj	net/minecraft/class_10538	net/minecraft/client/texture/PlayerSkinTextureDownloader
+181416:	m	(Lamo;Ljava/nio/file/Path;Ljava/lang/String;Z)Ljava/util/concurrent/CompletableFuture;	a	method_65861	downloadAndRegisterTexture
+181434:	m	(Ljava/nio/file/Path;Ljava/lang/String;)Lfyh;	a	method_65865	download
+
+===== respawn =====
+16930:c	tf$c	net/minecraft/class_4520$class_9117	net/minecraft/test/TestRunContext$TestStructureSpawner
+24725:	m	(Lafy;)V	a	method_11117	onPlayerRespawn
+25622:	f	Laem$a;	b	field_25645	NO_RESPAWN_BLOCK
+25633:	f	Laem$a;	m	field_25656	IMMEDIATE_RESPAWN
+26550:c	afy	net/minecraft/class_2724	net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket
+26736:	f	Lfne$a;	b	comp_4904	respawnData
+26738:	m	()Lfne$a;	b	comp_4904	respawnData
+26740:		p	1			respawnData
+27509:	f	Laba;	au	field_48076	RESPAWN
+27899:	f	Lain$a;	a	field_12774	PERFORM_RESPAWN
+39061:	m	()Z	Z	method_75001	areSpawnerBlocksEnabled
+39274:	m	(Laxg;)V	b	method_18215	onPlayerRespawned
+39275:		c	Called on the world that has the player's respawn point when the player respawned.
+39440:	f	Laxg$a;	dr	field_56607	respawn
+39474:	m	()Laxg$a;	V	method_67564	getRespawn
+39497:	m	(Laxf;Laxg$a;Z)Ljava/util/Optional;	a	method_60588	findRespawnPosition
+39498:		p	1			respawn
+39506:		p	1			respawn
+39546:		p	1			respawnPos
+39574:	m	(ZLfmb$a;)Lfmb;	a	method_60590	getRespawnTarget
+39607:		p	1			respawnPos
+39707:c	axg$a	net/minecraft/class_3222$class_10766	net/minecraft/server/network/ServerPlayerEntity$Respawn
+39709:	f	Lfne$a;	b	comp_4913	respawnData
+39711:	m	()Lfne$a;	a	comp_4913	respawnData
+39713:		p	1			respawn
+39718:		p	0			respawn
+39720:		p	1			respawnData
+39722:c	axg$b	net/minecraft/class_3222$class_9773	net/minecraft/server/network/ServerPlayerEntity$RespawnPos
+39729:		p	0			respawnPos
+39731:		p	0			respawnPos
+40360:	f	Layq;	n	field_61127	prepareSpawnTask
+40613:	m	()V	y	method_76689	markRespawned
+40815:c	ayq	net/minecraft/class_11549	net/minecraft/server/network/PrepareSpawnTask
+40837:c	ayq$a	net/minecraft/class_11549$class_11550	net/minecraft/server/network/PrepareSpawnTask$LoadPlayerChunks
+40851:c	ayq$b	net/minecraft/class_11549$class_11551	net/minecraft/server/network/PrepareSpawnTask$PlayerSpawn
+40868:c	ayq$c	net/minecraft/class_11549$class_11552	net/minecraft/server/network/PrepareSpawnTask$Stage
+42921:	m	(Laxg;ZLcgk$e;)Laxg;	a	method_14556	respawnPlayer
+45195:	f	Lbcz;	yq	field_23115	BLOCK_RESPAWN_ANCHOR_AMBIENT
+45196:	f	Lbcz;	yr	field_23116	BLOCK_RESPAWN_ANCHOR_CHARGE
+45197:	f	Ljd$c;	ys	field_23117	BLOCK_RESPAWN_ANCHOR_DEPLETE
+45198:	f	Lbcz;	yt	field_23118	BLOCK_RESPAWN_ANCHOR_SET_SPAWN
+54530:c	bpw	net/minecraft/class_12062	net/minecraft/datafixer/fix/PlayerRespawnDataFix
+60603:	f	Lcea;	D	field_63757	RESPAWN_ANCHOR_WORKS_GAMEPLAY
+61032:	m	(Lftm;)Lcex;	a	method_48808	badRespawnPoint
+61148:	f	Lamt;	U	field_42334	BAD_RESPAWN_POINT
+80914:	m	()Z	gN	method_45015	shouldCloseHandledScreenOnRespawn
+81558:		p	3			beforeSpawn
+82696:c	dfv	net/minecraft/class_10703	net/minecraft/entity/spawn/StructureSpawnCondition
+82776:	m	(Lcgu;Ldvx;Lis;Z)Lftm;	a	method_30769	findRespawnPos
+88459:	f	Ldlp;	zy	field_23141	RESPAWN_ANCHOR
+97883:	f	F	f	field_26404	creatureSpawnProbability
+97886:	m	()F	a	method_31002	getCreatureSpawnProbability
+97901:		p	1			creatureSpawnProbability
+97906:	f	F	c	field_26649	creatureSpawnProbability
+97908:	m	(F)Ldya$a;	a	method_31008	creatureSpawnProbability
+98593:		p	4			respawnDirection
+98623:		p	1			respawnDirection
+98630:		p	1			respawnDirection
+100067:	f	Ldzq;	ql	field_23152	RESPAWN_ANCHOR
+104573:c	egh	net/minecraft/class_4969	net/minecraft/block/RespawnAnchorBlock
+
+===== waiting =====
+22041:	c	A class that validates the clients' message acknowledgment.\n\n<p>When clients receive or send messages, they send "acknowledgments" to the server,\ncontaining messages they've last seen or received. If there are too many messages\nwaiting for message acknowledgments (more than {@value\nnet.minecraft.server.network.ServerPlayNetworkHandler#MAX_PENDING_ACKNOWLEDGMENTS}),\nor if the acknowledgment is incorrect, the client will be disconnected.
+40319:	f	Z	k	field_45017	waitingForKeepAlive
+40694:	f	Layk$a;	f	field_45031	WAITING_FOR_DUPE_DISCONNECT
+42240:		p	1			waitingReloaders
+42456:	f	Ljava/util/Set;	f	field_18044	waitingReloaders
+42514:		p	1			waitingReloaders
+50868:		c	Combines a list of {@code futures} into one future that holds a list\nof their results.\n\n<p>The returned future is fail-fast; if any of the input futures fails,\nthis returned future will be immediately completed exceptionally than\nwaiting for other input futures.\n\n@return the combined future\n@see #combineCancellable(List)\n@see #combineSafe(List)
+50877:		c	Combines a list of {@code futures} into one future that holds a list\nof their results.\n\n<p>The returned future is fail-fast; if any of the input futures fails,\nthis returned future will be immediately completed exceptionally than\nwaiting for other input futures. Additionally, all other futures will\nbe canceled.\n\n@return the combined future\n@see #combine(List)\n@see #combineSafe(List)
+61725:	f	Lalw;	g	field_5944	WAITING
+61756:	m	(Z)V	a	method_5598	setWaiting
+61757:		p	1			waiting
+61770:	m	()Z	f	method_5611	isWaiting
+70136:	m	()V	g	method_70683	setWaiting
+70621:	f	I	g	field_30221	MIN_WAITING_TIME
+70624:	f	I	j	field_6511	safeWaitingTime
+109078:	f	Lenk;	b	field_47384	WAITING_FOR_PLAYERS
+109080:	f	Lenk;	d	field_47386	WAITING_FOR_REWARD_EJECTION
+109149:	f	Lenk$b;	b	field_47402	WAITING
+137161:	f	Lfwf$a;	a	field_57834	WAITING_FOR_CAPTURE
+137162:	f	Lfwf$a;	b	field_57835	WAITING_FOR_COPY
+137163:	f	Lfwf$a;	c	field_57836	WAITING_FOR_UPLOAD
+157989:c	gsz	net/minecraft/class_11530	net/minecraft/client/gui/screen/dialog/WaitingForResponseScreen
+185415:	f	Z	ap	field_53718	waitingForNextTick
+
+===== ready =====
+8512:	c	An object holding a value that can be registered in a registry. In most cases, the\nvalue is already registered in a registry ("reference entry"), hence the name;\nhowever, it is possible to create a registry entry by direct reference\n("direct entry"). This is useful for data packs, as they can define\none-time use values directly without having to register them every time.\n\n<p>Registry entries do not define {@code equals} method. Instead, compare the result\nof {@link #getKeyOrValue}.\n\n
+8944:	c	A registry is used to register various in-game components. Almost all parts of the\ngame - from blocks, items, and entity types, to cat types, goat horn instruments,\nand structure pools - are registered in registries. Registry system allows the game\nto enumerate all known types of something, and to assign a unique identifier to each\nof those. Therefore, registering an object in the registry plays a very important\nrole, and failure to register new instances of registerable object usually r
+19958:		c	Sets the initial packet listener.\n\n@throws IllegalStateException if the listener was already set\n@see #transitionInbound\n@see #transitionOutbound
+24441:	m	(Lacj;)V	a	method_52794	onReady
+24458:c	acj	net/minecraft/class_8733	net/minecraft/network/packet/s2c/config/ReadyS2CPacket
+24521:	m	(Lacs;)V	a	method_52408	onReady
+24529:c	acs	net/minecraft/class_8736	net/minecraft/network/packet/c2s/config/ReadyC2SPacket
+31053:	f	Lcom/mojang/brigadier/exceptions/Dynamic3CommandExceptionType;	d	field_24379	MODIFIER_ALREADY_PRESENT_EXCEPTION
+31159:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	b	field_13467	ALREADY_BANNED_EXCEPTION
+31192:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13473	ALREADY_BANNED_EXCEPTION
+31568:	f	Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;	c	field_13504	ALREADY_ENABLED_EXCEPTION
+31569:	f	Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;	d	field_13505	ALREADY_DISABLED_EXCEPTION
+31574:	f	Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;	i	field_59624	ALREADY_EXISTS_EXCEPTION
+31685:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13507	ALREADY_DEOPPED_EXCEPTION
+31700:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	c	field_13596	ALREADY_RUNNING_EXCEPTION
+33216:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13667	ALREADY_OPPED_EXCEPTION
+33233:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13669	ALREADY_UNBANNED_EXCEPTION
+33247:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	b	field_13672	ALREADY_UNBANNED_EXCEPTION
+33291:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	c	field_33987	ALREADY_RUNNING_EXCEPTION
+33428:	f	Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;	b	field_13679	ALREADY_PUBLISHED_EXCEPTION
+33604:	f	Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;	b	field_41743	ALREADY_RIDING_EXCEPTION
+33669:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13703	ALREADY_OFF_EXCEPTION
+33676:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13704	ALREADY_ON_EXCEPTION
+33722:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	b	field_13715	OBJECTIVES_DISPLAY_ALREADY_EMPTY_EXCEPTION
+33723:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	c	field_13713	OBJECTIVES_DISPLAY_ALREADY_SET_EXCEPTION
+34201:	f	Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;	c	field_63170	ALREADY_EXISTS_EXCEPTION
+34309:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	e	field_13753	OPTION_FRIENDLY_FIRE_ALREADY_ENABLED_EXCEPTION
+34310:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	f	field_13754	OPTION_FRIENDLY_FIRE_ALREADY_DISABLED_EXCEPTION
+34311:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	g	field_13747	OPTION_SEE_FRIENDLY_INVISIBLES_ALREADY_ENABLED_EXCEPTION
+34312:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	h	field_13756	OPTION_SEE_FRIENDLY_INVISIBLES_ALREADY_DISABLED_EXCEPTION
+34849:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	a	field_13767	ALREADY_ON_EXCEPTION
+34850:	f	Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;	b	field_13770	ALREADY_OFF_EXCEPTION
+38773:	m	(J)Z	a	method_37114	isTickingFutureReady
+39308:	m	(J)Z	d	method_37117	isTickingFutureReady
+39319:		c	Checks whether any of the entity and its passengers already exist\nin the world, and if not, spawns the entity with its passengers.\n\n@return {@code true} if the spawning was successful, otherwise {@code false}\n\n@see net.minecraft.world.ServerWorldAccess#spawnEntityAndPassengers
+40829:	m	(Lwu;Laxu;)Laxg;	a	method_72296	onReady
+40861:	m	(Lwu;Laxu;)Laxg;	a	method_72305	onReady
+43016:	m	(Ljava/lang/String;)Laxg;	c	method_74003	isAlreadyConnected
+43810:	f	Lbcz;	GY	field_63225	ENTITY_ZOMBIE_NAUTILUS_DASH_READY
+43811:	f	Lbcz;	GZ	field_64606	ENTITY_ZOMBIE_NAUTILUS_DASH_READY_LAND
+44055:	f	Lbcz;	dP	field_64095	ENTITY_CAMEL_HUSK_DASH_READY
+44119:	f	Lbcz;	ea	field_40074	ENTITY_CAMEL_DASH_READY
+44168:	f	Lbcz;	fW	field_17609	BLOCK_COMPOSTER_READY
+44857:	f	Lbcz;	sW	field_63242	ENTITY_NAUTILUS_DASH_READY
+44858:	f	Lbcz;	sX	field_64614	ENTITY_NAUTILUS_DASH_READY_LAND
+47525:c	bfh$a	net/minecraft/class_5125$class_5126	net/minecraft/world/level/storage/SessionLock$AlreadyLockedException
+48282:		c	{@return whether {@code path} is already normalized}
+48447:			c	elements that already iterated all their successors
+52361:		p	3			heightAlreadyUpdated
+52366:		p	2			heightAlreadyUpdated
+55387:	f	Ljava/lang/String;	a	field_35030	HAS_INCREASED_HEIGHT_ALREADY_KEY
+61654:	m	()Z	Y_	method_19184	isReadyToBreed
+62624:		c	Starts riding {@code entity}.\n\n<p>For example, {@code player.startRiding(horse)} causes the player to ride a\nhorse; the opposite, {@code horse.startRiding(player)}, will cause the horse\nto ride a player.\n\n<p>This fails when this entity is already riding the entity (or vice versa),\nor when this entity {@linkplain #canStartRiding does not allow riding other entities}\n(or {@linkplain #canAddPassenger vice versa}) unless {@code force} is {@code true}.\nIf this entity is already riding an
+63312:		c	Sets the network ID of this entity.\n\n@apiNote This is used by client-side networking logic to set up the network\nID of entities from the server. This shouldn't be used by server-side logic\nas the network ID is already properly initialized on entity object construction.\n\n@see #getId()
+63519:		c	Starts riding {@code entity}.\n\n<p>For example, {@code player.startRiding(horse)} causes the player to ride a\nhorse; the opposite, {@code horse.startRiding(player)}, will cause the horse\nto ride a player.\n\n<p>This fails when this entity is already riding the entity (or vice versa),\nor when this entity {@linkplain #canStartRiding does not allow riding other entities}\n(or {@linkplain #canAddPassenger vice versa}).\nIf this entity is already riding another entity, it will stop riding tha
+67635:	f	Lcjm$a;	d	field_22298	READY_TO_ATTACK
+69644:	m	(Ldcx;)Z	a	method_18972	isReadyToBreed
+70835:	f	Lcpq$a;	d	field_16533	READY_TO_ATTACK
+73394:	m	()Lbcz;	gS	method_76100	getDashReadySound
+75252:	m	()Lbcz;	hh	method_75160	getDashReadySound

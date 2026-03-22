@@ -1,0 +1,86 @@
+166535: c	hig	net/minecraft/class_634	net/minecraft/client/network/ClientPlayNetworkHandler
+166536: 	f	Lcom/mojang/authlib/GameProfile;	A	field_3697	profile
+166537: 	f	Lhif;	B	field_3699	world
+166538: 	f	Lhif$a;	C	field_24321	worldProperties
+166539: 	f	Ljava/util/Map;	D	field_3693	playerListEntries
+166540: 	f	Ljava/util/Set;	E	field_40489	listedPlayerListEntries
+166541: 	f	Lhhy;	F	field_3700	advancementHandler
+166542: 	f	Lhij;	G	field_3691	commandSource
+166543: 	f	Lhij;	H	field_60782	restrictedCommandSource
+166544: 		c	A {@link CommandSource} that always has a permission level of 0.
+166545: 	f	Lgey;	I	field_3692	dataQueryHandler
+166546: 	f	I	J	field_19144	chunkLoadDistance
+166547: 	f	I	K	field_35164	simulationDistance
+166548: 	f	Lbgr;	L	field_3687	random
+166549: 	f	Lcom/mojang/brigadier/CommandDispatcher;	M	field_3696	commandDispatcher
+166550: 	f	Lhih;	N	field_54850	recipeManager
+166551: 	f	Ljava/util/UUID;	O	field_16771	sessionId
+166552: 	f	Ljava/util/Set;	P	field_25273	worldKeys
+166553: 	f	Ljr$b;	Q	field_25063	combinedDynamicRegistries
+166554: 	f	Ldgz;	R	field_45600	enabledFeatures
+166555: 	f	Ldnq;	S	field_51439	brewingRecipeRegistry
+166556: 	f	Lemb;	T	field_53030	fuelRegistry
+166557: 	f	Lwz$a;	U	field_58155	componentHasher
+166558: 	f	Ljava/util/OptionalInt;	V	field_54851	removedPlayerVehicleId
+166559: 	f	Lyt;	W	field_40799	session
+166560: 	f	Lzc$c;	X	field_39808	messagePacker
+166561: 	f	I	Y	field_58156	globalChatMessageIndex
+166562: 	f	Lyq;	Z	field_39858	lastSeenMessagesCollector
+166563: 	f	Lyv;	aa	field_40483	signatureStorage
+166564: 	f	Ljava/util/concurrent/CompletableFuture;	ab	field_53031	profileKeyPairFuture
+166565: 	f	Lawp;	ac	field_53032	syncedOptions
+166566: 	f	Lhhx;	ad	field_45945	chunkBatchSizeCalculator
+166567: 	f	Lhip;	ae	field_45946	pingMeasurer
+166568: 	f	Lhic;	af	field_62944	debugSubscriptionManager
+166569: 	f	Lhin;	ag	field_61723	chunkLoadProgress
+166570: 	f	Z	ah	field_48403	secureChatEnforced
+166571: 	f	Z	ai	field_46187	worldCleared
+166572: 	f	Lfur;	aj	field_47878	scoreboard
+166573: 	f	Liry;	ak	field_59963	waypointHandler
+166574: 	f	Lhiw;	al	field_51825	searchManager
+166575: 	f	Ljava/util/List;	am	field_56354	cachedData
+166576: 	f	Z	an	field_64674	loaded
+166577: 	f	I	l	field_54852	field_54852
+166578: 	f	Lorg/slf4j/Logger;	m	field_3695	LOGGER
+166579: 	f	Lyh;	n	field_39916	UNSECURE_SERVER_TOAST_TITLE
+166580: 	f	Lyh;	o	field_39917	UNSECURE_SERVER_TOAST_TEXT
+166581: 	f	Lyh;	p	field_40485	INVALID_PACKET_TEXT
+166582: 	f	Lyh;	q	field_45603	RECONFIGURING_TEXT
+166583: 	f	Lyh;	r	field_58157	BAD_CHAT_INDEX_TEXT
+166584: 	f	Lyh;	s	field_60783	CONFIRM_COMMAND_TITLE_TEXT
+166585: 	f	Lyh;	t	field_62028	CONFIRM_RUN_COMMAND_TEXT
+166586: 	f	Lyh;	u	field_62029	CONFIRM_SUGGEST_COMMAND_TEXT
+166587: 	f	I	v	field_40487	ACKNOWLEDGMENT_BATCH_SIZE
+166588: 	f	Lbbi;	w	field_63565	RESTRICTED_PERMISSION
+166589: 	f	Lbbj;	x	field_63566	RESTRICTED_PERMISSION_CHECK
+166590: 	f	Lbbn;	y	field_63567	RESTRICTED_PERMISSION_PREDICATE
+166591: 	f	Ladt$d;	z	field_60784	COMMAND_NODE_FACTORY
+166592: 	m	()Lhit;	A	method_45734	getServerInfo
+166593: 	m	()Ldgz;	B	method_45735	getEnabledFeatures
+166594: 	m	()Lfur;	C	method_55823	getScoreboard
+166595: 	m	()Ldnq;	D	method_59754	getBrewingRecipeRegistry
+166596: 	m	()Lemb;	E	method_62147	getFuelRegistry
+166597: 	m	()V	F	method_60346	refreshSearchManager
+166598: 	m	()Lhiw;	G	method_60347	getSearchManager
+166599: 	m	()Lwz$a;	H	method_68823	getComponentHasher
+166600: 	m	()Liry;	I	method_70936	getWaypointHandler
+166601: 	m	()Lbxg;	J	method_74750	getDebugDataStore
+166602: 	m	()Z	K	method_76760	isLoaded
+166603: 	m	()V	L	method_67268	clearCachedData
+166604: 	m	()Z	M	method_46529	isSecureChatEnforced
+166605: 	m	()V	N	method_45737	sendAcknowledgment
+166606: 	m	()V	O	method_72898	setPlayerLoaded
+166607: 	m	()V	P	method_34018	method_34018
+166608: 	m	(I)V	a	method_64896	method_64896
+166609: 		p	1			id
+166610: 	m	(IILaeq;)V	a	method_38539	loadChunk
+166611: 		p	3			chunkData
+166612: 		p	2			z
+166613: 		p	1			x
+166614: 	m	(IILaev;)V	a	method_38545	method_38545
+166615: 	m	(IILaev;Z)V	a	method_38543	readLightData
+166616: 		p	2			z
+166617: 		p	1			x
+166618: 		p	4			scheduleBlockRenders
+166619: 		p	3			data
+166620: 	m	(IILfkq;Ldww;Ljava/util/BitSet;Ljava/util/BitSet;Ljava/util/Iterator;Z)V	a	method_2870	updateLighting
