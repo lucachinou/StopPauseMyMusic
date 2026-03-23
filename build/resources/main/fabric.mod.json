@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "stoppausemymusic",
+  "version": "1.0-SNAPSHOT",
+  "name": "StopPauseMyMusic",
+  "description": "Keeps Minecraft music playing across world, server, and dimension transitions.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/stoppausemymusic/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.lucachinou.stoppausemymusic.client.StoppausemymusicDataGenerator"
+    ],
+    "client": [
+      "dev.lucachinou.stoppausemymusic.client.StoppausemymusicClient"
+    ],
+    "main": [
+      "dev.lucachinou.stoppausemymusic.Stoppausemymusic"
+    ]
+  },
+  "mixins": [
+    "stoppausemymusic.mixins.json",
+    {
+      "config": "stoppausemymusic.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.10"
+  }
+}
