@@ -1,6 +1,6 @@
 # StopPauseMyMusic
 
-This is a Fabric only mod for Minecraft 1.21.4 (more supported versions later)
+This is a Fabric only mod for Minecraft 1.21.2 (more supported versions later)
 If you have any issue about the mods, you can open an issue on the GitHub repository.
 
 ## Build
@@ -20,4 +20,4 @@ The output jarfile will be located at "/build/libs"
 
 ## Note
 - This mod is only **client-side**
-- Target the Yarn **1.21.4+build.8**
+- Target the Yarn **1.21.2+build.1**
