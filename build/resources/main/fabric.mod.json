@@ -30,6 +30,6 @@
   "depends": {
     "fabricloader": ">=0.18.4",
     "fabric-api": "*",
-    "minecraft": "1.21.10"
+    "minecraft": "1.21.4"
   }
 }
