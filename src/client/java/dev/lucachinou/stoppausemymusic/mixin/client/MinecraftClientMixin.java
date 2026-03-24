@@ -33,8 +33,8 @@ public abstract class MinecraftClientMixin {
         PersistentMusicState.keepCurrentMusic(this.musicTracker);
     }
 
-    @Redirect(method = "reset", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;stopAll()V"))
-    private void stoppausemymusic$keepCurrentMusicPlayingDuringReset(SoundManager soundManager) {
+    @Redirect(method = "setWorld", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;stopAll()V"))
+    private void stoppausemymusic$keepCurrentMusicPlayingDuringWorldSwitch(SoundManager soundManager) {
         PersistentMusicState.stopAllExceptCurrentMusic(this.musicTracker, soundManager);
     }
 }
