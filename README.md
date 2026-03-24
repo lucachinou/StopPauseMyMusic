@@ -1,6 +1,5 @@
 # StopPauseMyMusic
 
-This is a Fabric only mod for Minecraft 1.21.11 (more supported versions later)
 If you have any issue about the mods, you can open an issue on the GitHub repository.
 
 ## Build
