@@ -20,17 +20,17 @@ public abstract class MinecraftClientMixin {
 
     @Inject(method = "joinWorld", at = @At("HEAD"))
     private void stoppausemymusic$preserveCurrentMusicBeforeJoinWorld(CallbackInfo ci) {
-        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+        PersistentMusicState.keepCurrentMusic(this.musicTracker);
     }
 
     @Inject(method = "disconnect(Lnet/minecraft/client/gui/screen/Screen;Z)V", at = @At("HEAD"))
     private void stoppausemymusic$preserveCurrentMusicBeforeDisconnect(net.minecraft.client.gui.screen.Screen disconnectionScreen, boolean transferring, CallbackInfo ci) {
-        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+        PersistentMusicState.keepCurrentMusic(this.musicTracker);
     }
 
     @Inject(method = "onDisconnected", at = @At("HEAD"))
     private void stoppausemymusic$preserveCurrentMusicBeforeDisconnectCleanup(CallbackInfo ci) {
-        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+        PersistentMusicState.keepCurrentMusic(this.musicTracker);
     }
 
     @Redirect(method = "reset", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;stopAll()V"))
