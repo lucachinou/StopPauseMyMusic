@@ -37,9 +37,4 @@ public abstract class MinecraftClientMixin {
     private void stoppausemymusic$keepCurrentMusicPlayingDuringReset(SoundManager soundManager) {
         PersistentMusicState.stopAllExceptCurrentMusic(this.musicTracker, soundManager);
     }
-
-    @Redirect(method = "openGameMenu", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;pauseAll()V"))
-    private void stoppausemymusic$keepMusicPlayingInPauseMenu(SoundManager soundManager) {
-        // Ne rien faire : on supprime complètement la mise en pause audio au menu pause.
-    }
 }
