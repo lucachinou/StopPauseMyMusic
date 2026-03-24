@@ -3,6 +3,7 @@ package dev.lucachinou.stoppausemymusic.client;
 import dev.lucachinou.stoppausemymusic.mixin.client.accessor.MusicTrackerAccessor;
 import dev.lucachinou.stoppausemymusic.mixin.client.accessor.SoundManagerAccessor;
 import dev.lucachinou.stoppausemymusic.mixin.client.accessor.SoundSystemAccessor;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.MusicTracker;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.client.sound.SoundManager;
@@ -17,6 +18,15 @@ public final class PersistentMusicState {
     private static int graceTicksRemaining;
 
     private PersistentMusicState() {
+    }
+
+    public static boolean preserveCurrentMusic(MinecraftClient client) {
+        if (client == null) {
+            clear();
+            return false;
+        }
+
+        return keepCurrentMusic(client.getMusicTracker(), client.getSoundManager());
     }
 
     public static boolean keepCurrentMusic(MusicTracker musicTracker, SoundManager soundManager) {

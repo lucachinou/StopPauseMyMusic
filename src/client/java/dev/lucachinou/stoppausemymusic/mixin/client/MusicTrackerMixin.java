@@ -34,13 +34,19 @@ public abstract class MusicTrackerMixin {
         PersistentMusicState.validate(currentMusic, this.client.getSoundManager());
     }
 
-    @Inject(method = "stop()V", at = @At("TAIL"))
-    private void stoppausemymusic$clearStateAfterStop(CallbackInfo ci) {
-        PersistentMusicState.clear();
+    @Inject(method = "stop()V", at = @At("HEAD"), cancellable = true)
+    private void stoppausemymusic$keepPreservedMusicOnStop(CallbackInfo ci) {
+        SoundInstance currentMusic = ((MusicTrackerAccessor) this).stoppausemymusic$getCurrent();
+        if (PersistentMusicState.shouldKeepPlaying(currentMusic, this.client.getSoundManager())) {
+            ci.cancel();
+        }
     }
 
-    @Inject(method = "stop(Lnet/minecraft/sound/MusicSound;)V", at = @At("TAIL"))
-    private void stoppausemymusic$clearStateAfterTypedStop(MusicSound musicSound, CallbackInfo ci) {
-        PersistentMusicState.clear();
+    @Inject(method = "stop(Lnet/minecraft/sound/MusicSound;)V", at = @At("HEAD"), cancellable = true)
+    private void stoppausemymusic$keepPreservedMusicOnTypedStop(MusicSound musicSound, CallbackInfo ci) {
+        SoundInstance currentMusic = ((MusicTrackerAccessor) this).stoppausemymusic$getCurrent();
+        if (PersistentMusicState.shouldKeepPlaying(currentMusic, this.client.getSoundManager())) {
+            ci.cancel();
+        }
     }
 }

@@ -8,13 +8,30 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin {
     @Shadow
     @Final
     private MusicTracker musicTracker;
+
+    @Inject(method = "joinWorld", at = @At("HEAD"))
+    private void stoppausemymusic$preserveCurrentMusicBeforeJoinWorld(CallbackInfo ci) {
+        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+    }
+
+    @Inject(method = "disconnect(Lnet/minecraft/client/gui/screen/Screen;Z)V", at = @At("HEAD"))
+    private void stoppausemymusic$preserveCurrentMusicBeforeDisconnect(net.minecraft.client.gui.screen.Screen disconnectionScreen, boolean transferring, CallbackInfo ci) {
+        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+    }
+
+    @Inject(method = "onDisconnected", at = @At("HEAD"))
+    private void stoppausemymusic$preserveCurrentMusicBeforeDisconnectCleanup(CallbackInfo ci) {
+        PersistentMusicState.preserveCurrentMusic((MinecraftClient) (Object) this);
+    }
 
     @Redirect(method = "reset", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;stopAll()V"))
     private void stoppausemymusic$keepCurrentMusicPlayingDuringReset(SoundManager soundManager) {
