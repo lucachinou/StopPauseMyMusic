@@ -1,6 +1,6 @@
 # StopPauseMyMusic
 
-This is a Fabric only mod for Minecraft 26.1.
+This is a Fabric only mod for Minecraft 26.2.
 If you have any issue about the mod, you can open an issue on the GitHub repository.
 
 ## Build
@@ -20,7 +20,8 @@ The output jar file will be located in `build/libs`.
 
 ## Notes
 - This mod is only **client-side**
-- Current Minecraft target: **26.1**
-- Fabric Loader: **0.18.4**
-- Fabric API: **0.144.1+26.1**
-- The project builds against the official Minecraft names used by 26.1, with a local identity mapping jar for Loom compatibility.
+- Current Minecraft target: **26.2**
+- Fabric Loader: **0.19.3**
+- Fabric API: **0.152.1+26.2**
+- Build tooling: **Fabric Loom 1.16.2** with **Gradle 9.4.0**
+- The project builds with a local identity mapping jar for Loom compatibility.
