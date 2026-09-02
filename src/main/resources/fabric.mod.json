@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "StopPauseMyMusic",
   "description": "Keeps Minecraft music playing across world, server, and dimension transitions.",
-  "authors": [],
+  "authors": ["lucachinou"],
   "contact": {},
   "license": "All-Rights-Reserved",
   "environment": "client",
@@ -17,6 +17,6 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version_range}"
   }
 }

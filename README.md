@@ -1,6 +1,6 @@
 # StopPauseMyMusic
 
-This is a Fabric only mod for Minecraft 26.2.
+This is a Fabric only mod for Minecraft 26.3 pre-release.
 If you have any issue about the mod, you can open an issue on the GitHub repository.
 
 ## Build
