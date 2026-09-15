@@ -10,6 +10,19 @@ base {
     archivesName = project.archives_base_name
 }
 
+def identityMappingsJar = layout.projectDirectory
+        .file("mappings/identity-${project.minecraft_version}-v2.jar").asFile
+
+if (!identityMappingsJar.exists()) {
+    identityMappingsJar.parentFile.mkdirs()
+    new java.util.zip.ZipOutputStream(identityMappingsJar.newOutputStream()).withCloseable { zip ->
+        zip.putNextEntry(new java.util.zip.ZipEntry("mappings/mappings.tiny"))
+        zip.write("tiny\t2\t0\tofficial\tintermediary\tnamed\n".getBytes("UTF-8"))
+        zip.closeEntry()
+    }
+    logger.lifecycle("Generated identity mappings for Minecraft ${project.minecraft_version}")
+}
+
 sourceSets {
     main {
         java.srcDirs += ['src/client/java']
@@ -20,6 +33,10 @@ sourceSets {
 loom {
     clientOnlyMinecraftJar()
     noIntermediateMappings()
+
+    interfaceInjection {
+        enableDependencyInterfaceInjection = false
+    }
 
     runs {
         client {
@@ -45,10 +62,8 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings files("mappings/identity-26.1-v2.jar")
+    mappings files(identityMappingsJar)
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
 processResources {
